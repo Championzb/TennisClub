@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+	<h2> Login </h2>
+	{% block login_failure %}
+
+	{% endblock login_failure %}
+	<img src="{% static "assets/images/logo.png" %}" /><br>
+	<form action = "/Account/auth/" method="post">{% csrf_token %}
+		Email:<input tpye="email" name="email"><br>
+		Password:<input type="password" name="password"><br>
+	<input type="submit" value="Login"/>
+	</form>
+{% endblock content %}

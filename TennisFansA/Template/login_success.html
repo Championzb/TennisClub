@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h2>Welcome {{email}}</h2>
+	<p>Click<a href="/User/profile">here</a> to edit your profile.</p>
+	<p>Click<a href="/User/profile">here</a> to find a game.</p>
+	<p>end</p>
+
+{% endblock %}
+{% block league_match %}
+	<h3>league matches</h3>
+	{% for league_match in league_matches %}
+		<p>Match Name:{{ league_match.name }}</p>
+		<p>Match Start Date:{{ league_match.start_date }}</p>
+		<p>Match End Date:{{ league_match.finish_date }}</p>
+		<p>Match city:{{ league_match.city }}</p>
+
+	{% endfor %}
+{% endblock %}
